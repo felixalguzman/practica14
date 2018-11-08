@@ -11,8 +11,7 @@ eventos registrados, parecido al Google Calendar.
 Las librerías y componentes que necesitan utilizar en dicho desarrollo son:
 
 * Vaadin (https://vaadin.com/docs/v10/flow/Overview.html)
-* Mail: (http://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-
-email.html)
+* Mail: (http://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-email.html)
 * Scheduling Tasks: (https://spring.io/guides/gs/scheduling-tasks/)
 * SMTP Gratuito: (https://www.sparkpost.com) o (https://www.mailjet.com/)
 * Calendario Vaadin: (https://vaadin.com/directory/component/calendar-component,
