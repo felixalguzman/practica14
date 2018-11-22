@@ -22,20 +22,25 @@ sourceCompatibility = 1.8
 repositories {
     mavenCentral()
     maven { url "https://maven.vaadin.com/vaadin-addons" }
+    maven { url "https://repo.spring.io/snapshot" }
+    maven { url "https://repo.spring.io/milestone" }
+    maven { url "https://oss.sonatype.org/content/repositories/vaadin-snapshots/" }
 
 }
 
 
 ext {
-    vaadinVersion = '10.0.7'
+    vaadinVersion = '10.0.6'
 }
 
 dependencies {
     implementation('org.springframework.boot:spring-boot-starter-data-jpa')
-    implementation('com.vaadin:vaadin-spring-boot-starter')
+    implementation('com.vaadin:vaadin-spring-boot-starter:10.0.4')
     compile "com.vaadin:incubator-popup-flow:1.0.0"
     runtimeOnly('com.h2database:h2')
     testImplementation('org.springframework.boot:spring-boot-starter-test')
+    compile('org.vaadin.blackbluegl:calendar-component:2.0-BETA4')
+    compile('org.vaadin.onur:calendar-component:1.0.0')
 }
 
 dependencyManagement {

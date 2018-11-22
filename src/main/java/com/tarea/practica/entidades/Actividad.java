@@ -15,8 +15,6 @@ public class Actividad implements Serializable {
 
     private Date inicio;
 
-    private Date fin;
-
     private String nombre;
 
     private String detalles;
@@ -24,9 +22,8 @@ public class Actividad implements Serializable {
     public Actividad() {
     }
 
-    public Actividad(Date inicio, Date fin, String nombre, String detalles) {
+    public Actividad(Date inicio,  String nombre, String detalles) {
         this.inicio = inicio;
-        this.fin = fin;
         this.nombre = nombre;
         this.detalles = detalles;
     }
@@ -45,14 +42,6 @@ public class Actividad implements Serializable {
 
     public void setInicio(Date inicio) {
         this.inicio = inicio;
-    }
-
-    public Date getFin() {
-        return fin;
-    }
-
-    public void setFin(Date fin) {
-        this.fin = fin;
     }
 
     public String getNombre() {
