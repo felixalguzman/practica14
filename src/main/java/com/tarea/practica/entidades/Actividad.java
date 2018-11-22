@@ -26,10 +26,11 @@ public class Actividad implements Serializable {
     public Actividad() {
     }
 
-    public Actividad(Date inicio,  String nombre, String detalles) {
+    public Actividad(Date inicio, String nombre, String detalles, Gerente gerente) {
         this.inicio = inicio;
         this.nombre = nombre;
         this.detalles = detalles;
+        this.gerente = gerente;
     }
 
     public Long getId() {
@@ -62,5 +63,13 @@ public class Actividad implements Serializable {
 
     public void setDetalles(String detalles) {
         this.detalles = detalles;
+    }
+
+    public Gerente getGerente() {
+        return gerente;
+    }
+
+    public void setGerente(Gerente gerente) {
+        this.gerente = gerente;
     }
 }

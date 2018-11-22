@@ -23,7 +23,7 @@ public class Gerente implements Serializable {
 
     private Boolean admin;
 
-    @OneToMany
+    @OneToMany(mappedBy = "gerente")
     private Set<Actividad> actividades;
 
     private String usuario;

@@ -36,7 +36,7 @@ public class GerenteServices {
             correoServices.crearCorreo(correo);
 
 
-            Actividad actividad = new Actividad(Date.from(Instant.now()),"Demo", "detalle del demo" );
+            Actividad actividad = new Actividad(Date.from(Instant.now()),"Demo", "detalle del demo", null );
             actividadServices.crearActividad(actividad);
 
 

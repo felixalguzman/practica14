@@ -11,6 +11,9 @@ public class Opciones extends VerticalLayout {
 
         TextField textField = new TextField("Nombre");
 
+        Menu menu = new Menu();
+        
+        add(menu);
 
         add(textField);
     }

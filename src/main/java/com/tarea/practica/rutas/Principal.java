@@ -65,6 +65,7 @@ public class Principal extends VerticalLayout {
         eliminar = new Button("Eliminar", new Icon(VaadinIcon.MINUS));
         actividadBinder = new Binder<>();
 
+        Menu menu = new Menu();
 
         actividadBinder.forField(nombre).asRequired("El nombre es necesario").bind(Actividad::getNombre, Actividad::setNombre);
         actividadBinder.forField(detalles).bind(Actividad::getDetalles, Actividad::setDetalles);
@@ -111,13 +112,15 @@ public class Principal extends VerticalLayout {
         eliminar.setVisible(false);
         horizontalLayout.add(ok, actualizar, eliminar);
         horizontalLayout.setAlignItems(Alignment.END);
-        verticalLayout.add(new Label("Nueva actividad"), nombre, detalles, fecha, horizontalLayout);
+        Label label = new Label("Nueva actividad");
+        verticalLayout.add(label, nombre, detalles, fecha, horizontalLayout);
 
 
         dialog.add(verticalLayout);
 
         calendario.addEventClickListener(event -> {
 
+            label.setVisible(false);
             Actividad actividadVieja = actividadServices.buscarId(event.getDetail().getId());
 
             nombre.setValue(event.getDetail().getNombre());
@@ -174,6 +177,7 @@ public class Principal extends VerticalLayout {
                 nombre.clear();
                 detalles.clear();
                 fecha.clear();
+                label.setVisible(true);
                 ok.setVisible(true);
                 actualizar.setVisible(false);
                 eliminar.setVisible(false);
@@ -183,26 +187,8 @@ public class Principal extends VerticalLayout {
 
         HorizontalLayout nav = new HorizontalLayout();
 
-        RouterLink label = new RouterLink("Calendario", Principal.class);
-
-        RouterLink opcionesLabel = new RouterLink("Opciones", Opciones.class);
-
-        ComboBox<Label> opciones = new ComboBox<>();
-
-//        opciones.setItems(label, opcionesLabel);
-
-
-        HorizontalLayout opcionesMenu = new HorizontalLayout(opcionesLabel);
-        opcionesMenu.setAlignItems(Alignment.END);
-        opcionesMenu.setAlignSelf(Alignment.END);
-        opcionesMenu.setSpacing(true);
-        setHorizontalComponentAlignment(Alignment.END, opcionesMenu);
-
-        HorizontalLayout menu = new HorizontalLayout(label, opcionesMenu);
-        menu.setSizeFull();
 
         nav.add(button);
-
         add(menu);
         add(nav);
         add(calendario);
