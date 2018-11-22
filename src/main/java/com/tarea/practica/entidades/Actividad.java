@@ -3,6 +3,7 @@ package com.tarea.practica.entidades;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -18,6 +19,9 @@ public class Actividad implements Serializable {
     private String nombre;
 
     private String detalles;
+
+    @ManyToOne
+    private Gerente gerente;
 
     public Actividad() {
     }

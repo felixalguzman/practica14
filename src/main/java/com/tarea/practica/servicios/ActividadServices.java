@@ -10,6 +10,7 @@ import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ActividadServices {
@@ -22,16 +23,28 @@ public class ActividadServices {
 
         Actividad actividad = new Actividad(Date.from(Instant.now()), "Demo", "algo");
 
+
         actividadRepository.save(actividad);
     }
 
-    public List<Actividad> buscarTodos(){
+    public List<Actividad> buscarTodos() {
         return actividadRepository.findAll();
     }
 
     @Transactional
-    public void crearActividad(Actividad actividad){
+    public void crearActividad(Actividad actividad) {
 
         actividadRepository.save(actividad);
+    }
+
+    public Actividad buscarId(Long id) {
+
+        Optional<Actividad> actividad = actividadRepository.findById(id);
+
+        return actividad.orElse(null);
+    }
+
+    public void eliminarActividad(Actividad actividad){
+        actividadRepository.delete(actividad);
     }
 }
