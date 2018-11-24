@@ -8,4 +8,5 @@ import org.springframework.stereotype.Repository;
 public interface GerenteRepository extends JpaRepository<Gerente, Long> {
 
     Gerente findByNombre(String s);
+    Gerente findByUsuarioAndPassword(String usuario, String password);
 }

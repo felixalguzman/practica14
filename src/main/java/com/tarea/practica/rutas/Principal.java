@@ -36,7 +36,7 @@ import java.util.Date;
 import java.util.Optional;
 
 
-@Route("")
+@Route("calendario")
 public class Principal extends VerticalLayout {
 
     Binder<Actividad> actividadBinder;

@@ -36,7 +36,7 @@ public class GerenteServices {
             correoServices.crearCorreo(correo);
 
 
-            Actividad actividad = new Actividad(Date.from(Instant.now()),"Demo", "detalle del demo", null );
+            Actividad actividad = new Actividad(Date.from(Instant.now()), "Demo", "detalle del demo", null);
             actividadServices.crearActividad(actividad);
 
 
@@ -45,6 +45,12 @@ public class GerenteServices {
             gerenteRepository.save(gerente);
         }
 
+    }
+
+
+    public Gerente login(String usuario, String password) {
+
+        return gerenteRepository.findByUsuarioAndPassword(usuario, password);
     }
 
     public boolean buscarAdminDefault() {
