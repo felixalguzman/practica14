@@ -1,9 +1,6 @@
 package com.tarea.practica.entidades;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -20,17 +17,16 @@ public class Actividad implements Serializable {
 
     private String detalles;
 
-    @ManyToOne
-    private Gerente gerente;
+    private Boolean enviado = false;
+
 
     public Actividad() {
     }
 
-    public Actividad(Date inicio, String nombre, String detalles, Gerente gerente) {
+    public Actividad(Date inicio, String nombre, String detalles) {
         this.inicio = inicio;
         this.nombre = nombre;
         this.detalles = detalles;
-        this.gerente = gerente;
     }
 
     public Long getId() {
@@ -65,11 +61,11 @@ public class Actividad implements Serializable {
         this.detalles = detalles;
     }
 
-    public Gerente getGerente() {
-        return gerente;
+    public Boolean getEnviado() {
+        return enviado;
     }
 
-    public void setGerente(Gerente gerente) {
-        this.gerente = gerente;
+    public void setEnviado(Boolean enviado) {
+        this.enviado = enviado;
     }
 }

@@ -1,9 +1,6 @@
 package com.tarea.practica.entidades;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.Set;
@@ -23,14 +20,14 @@ public class Gerente implements Serializable {
 
     private Boolean admin;
 
-    @OneToMany(mappedBy = "gerente")
+    @OneToMany
     private Set<Actividad> actividades;
 
     private String usuario;
 
     private String password;
 
-    @OneToMany
+    @OneToMany(fetch = FetchType.EAGER)
     private Set<Correo> correos;
 
     public Gerente() {

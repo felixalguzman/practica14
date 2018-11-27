@@ -36,7 +36,7 @@ public class GerenteServices {
             correoServices.crearCorreo(correo);
 
 
-            Actividad actividad = new Actividad(Date.from(Instant.now()), "Demo", "detalle del demo", null);
+            Actividad actividad = new Actividad(Date.from(Instant.now()), "Demo", "detalle del demo");
             actividadServices.crearActividad(actividad);
 
 
@@ -53,6 +53,11 @@ public class GerenteServices {
         return gerenteRepository.findByUsuarioAndPassword(usuario, password);
     }
 
+    @Transactional
+    public void crearGerente(Gerente gerente) {
+        gerenteRepository.save(gerente);
+    }
+
     public boolean buscarAdminDefault() {
 
         Gerente gerente = gerenteRepository.findByNombre("Felix");
@@ -60,5 +65,6 @@ public class GerenteServices {
         return gerente != null;
 
     }
+
 
 }

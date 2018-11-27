@@ -17,4 +17,9 @@ public class CorreoServices {
 
         correoRepository.save(correo);
     }
+
+    public void eliminarCorreo(Correo correo){
+
+        correoRepository.delete(correo);
+    }
 }
