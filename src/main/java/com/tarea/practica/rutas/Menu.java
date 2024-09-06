@@ -1,7 +1,7 @@
 package com.tarea.practica.rutas;
 
 import com.vaadin.flow.component.contextmenu.ContextMenu;
-import com.vaadin.flow.component.html.Label;
+import com.vaadin.flow.component.html.NativeLabel;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.router.RouterLink;
 import com.vaadin.flow.server.VaadinSession;
@@ -11,7 +11,7 @@ public class Menu extends HorizontalLayout {
     public Menu() {
 
         RouterLink calendario1 = new RouterLink("Calendario", Principal.class);
-        Label h3 = new Label("Opciones");
+        NativeLabel h3 = new NativeLabel("Opciones");
 
         ContextMenu contextMenu = new ContextMenu();
         contextMenu.setTarget(h3);
@@ -28,7 +28,6 @@ public class Menu extends HorizontalLayout {
                 getUI().get().navigate(LogIn.class);
 
         });
-
 
         HorizontalLayout horizontalLayout1 = new HorizontalLayout();
         horizontalLayout1.setSizeFull();

@@ -1,11 +1,9 @@
 package com.tarea.practica.rutas;
 
-import com.sun.xml.internal.ws.api.pipe.Fiber;
 import com.tarea.practica.entidades.Actividad;
 import com.tarea.practica.servicios.ActividadServices;
 import com.tarea.practica.servicios.GerenteServices;
 import com.vaadin.flow.component.button.Button;
-import com.vaadin.flow.component.combobox.ComboBox;
 import com.vaadin.flow.component.datepicker.DatePicker;
 import com.vaadin.flow.component.dialog.Dialog;
 import com.vaadin.flow.component.html.*;
@@ -19,21 +17,11 @@ import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.data.binder.Binder;
 import com.vaadin.flow.data.converter.LocalDateToDateConverter;
 import com.vaadin.flow.router.Route;
-import com.vaadin.flow.router.RouterLink;
-import com.vaadin.flow.server.Command;
-import com.vaadin.flow.spring.annotation.UIScope;
-import com.vaadin.ui.DateField;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
-import org.vaadin.addon.calendar.Calendar;
 import org.vaadin.calendar.CalendarComponent;
-import org.vaadin.calendar.data.AbstractCalendarDataProvider;
-
 import java.time.LocalDate;
 import java.time.ZoneId;
-import java.util.Collection;
 import java.util.Date;
-import java.util.Optional;
 
 
 @Route("calendario")
@@ -112,7 +100,7 @@ public class Principal extends VerticalLayout {
         eliminar.setVisible(false);
         horizontalLayout.add(ok, actualizar, eliminar);
         horizontalLayout.setAlignItems(Alignment.END);
-        Label label = new Label("Nueva actividad");
+        var label = new NativeLabel("Nueva actividad");
         verticalLayout.add(label, nombre, detalles, fecha, horizontalLayout);
 
 
